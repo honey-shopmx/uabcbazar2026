@@ -1,527 +1,267 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡BAZAR UABC VALLE DORADO 2026! 🎉</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        :root {
-            --uabc-blue: #20419A;
-            --uabc-gold: #FEBE10;
-            --uabc-green: #00723F;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, #20419A 0%, #112D6E 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(254,190,16,0.15) 0%, transparent 70%);
-            animation: pulse 15s infinite linear;
-        }
-        
-        @keyframes pulse {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .gold-text {
-            color: #FEBE10;
-            text-shadow: 0 0 20px rgba(254,190,16,0.6);
-        }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .card-hover:hover {
-            transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 25px 50px -12px rgb(32 65 154 / 0.4);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -4px;
-            left: 0;
-            background-color: #FEBE10;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .countdown-digit {
-            background: rgba(254, 190, 16, 0.15);
-            backdrop-filter: blur(10px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | Torneo UFC 5 - UABC Valle Dorado</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: #0a0a0a;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .ufc-red { color: #e30613; }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+                  url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1P7NDCoRdehcZXnDVBdGCx57vHvMs-K7CToD5BEZI-kWJFnKZI12A9-6B2u7Q8vYuhVHOFW1f7ky8t5Qjqc1Hnu1petfITI6HjLfvAvx-pgO3x0xWtt8K9LvYHENYgaRShMbMy2cZcGYI3A4J5HTBc39-1OHOmqzHaj74pzv4zdHA6SeRH_yX4i1qLZma/w1200-h630-p-k-no-nu/ufc-5-capa.png') center/cover no-repeat fixed;
+      min-height: 100vh;
+    }
+
+    .card {
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(227, 6, 19, 0.3);
+    }
+
+    .video-box {
+      max-width: 620px;
+      margin: 0 auto;
+      background: #111;
+      padding: 12px;
+      border-radius: 20px;
+      border: 3px solid #e30613;
+      box-shadow: 0 15px 30px -10px rgba(227, 6, 19, 0.5);
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="text-white">
 
-    <!-- NAVBAR -->
-    <nav class="bg-[#20419A] border-b border-[#FEBE10]/30 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/UABC_Logo.PNG" 
-                     alt="Logo UABC" class="h-12 w-auto">
-                <div>
-                    <span class="font-bold text-2xl tracking-tighter">UABC</span>
-                    <span class="text-[#FEBE10] text-sm block -mt-1">Valle Dorado</span>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#que-es" class="nav-link hover:text-[#FEBE10] transition-colors">¿QUÉ ES?</a>
-                <a href="#que-hay" class="nav-link hover:text-[#FEBE10] transition-colors">¿QUÉ HAY?</a>
-                <a href="#cuando" class="nav-link hover:text-[#FEBE10] transition-colors">¿CUÁNDO?</a>
-                <a href="#donde" class="nav-link hover:text-[#FEBE10] transition-colors">¿DÓNDE?</a>
-                <a href="#registra" class="nav-link hover:text-[#FEBE10] transition-colors">¡REGÍSTRATE!</a>
-            </div>
-            
-            <button onclick="lanzarConfeti()" 
-                    class="bg-[#FEBE10] hover:bg-white text-[#20419A] font-bold px-6 py-3 rounded-2xl flex items-center gap-2 transition-all active:scale-95">
-                <i class="fas fa-fire"></i>
-                ¡LANZA CONFETI!
-            </button>
+  <!-- Navbar -->
+  <nav class="bg-black border-b-4 border-red-600 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <i class="fas fa-fist-raised text-4xl ufc-red"></i>
+        <div>
+          <h1 class="text-3xl font-black tracking-tighter">TORNEO UFC 5</h1>
+          <p class="text-xs text-red-400">UABC • Campus Valle Dorado</p>
         </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero-bg min-h-screen flex items-center relative">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8 pt-20 md:pt-0">
-                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-3xl border border-[#FEBE10]/30">
-                    <div class="w-3 h-3 bg-[#FEBE10] rounded-full animate-pulse"></div>
-                    <span class="uppercase tracking-widest text-sm font-medium">20 • 21 • 22 Marzo 2026</span>
-                </div>
-                
-                <h1 class="text-6xl md:text-7xl font-bold leading-none">
-                    ¡EL GRAN<br>
-                    <span class="gold-text text-8xl md:text-9xl">BAZAR</span><br>
-                    UABC VALLE DORADO!
-                </h1>
-                
-                <p class="text-2xl text-zinc-200 max-w-lg">
-                    Ofertas increíbles • Arte estudiantil • Ropa única • Libros y tecnología • ¡Y mucha diversión!
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <button onclick="document.getElementById('registra').scrollIntoView({ behavior: 'smooth' })" 
-                            class="bg-[#FEBE10] hover:bg-white text-[#20419A] text-xl font-bold px-10 py-6 rounded-3xl flex items-center gap-4 transition-all active:scale-95 shadow-2xl shadow-[#FEBE10]/50">
-                        <i class="fas fa-ticket-alt text-3xl"></i>
-                        ¡QUIERO IR GRATIS!
-                    </button>
-                    
-                    <button onclick="lanzarConfeti()" 
-                            class="border-4 border-[#FEBE10] hover:bg-[#FEBE10] hover:text-[#20419A] text-xl font-bold px-8 py-6 rounded-3xl flex items-center gap-3 transition-all">
-                        <i class="fas fa-heart"></i>
-                        Apoyar a estudiantes
-                    </button>
-                </div>
-                
-                <div class="flex items-center gap-6 text-sm">
-                    <div class="flex -space-x-4">
-                        <div class="w-10 h-10 bg-[#FEBE10] rounded-full border-2 border-white flex items-center justify-center text-xs">👕</div>
-                        <div class="w-10 h-10 bg-white text-[#20419A] rounded-full border-2 border-white flex items-center justify-center text-xs">🎨</div>
-                        <div class="w-10 h-10 bg-[#00723F] rounded-full border-2 border-white flex items-center justify-center text-xs">📚</div>
-                    </div>
-                    <p class="text-zinc-400">+150 puestos • 3000+ visitantes esperados</p>
-                </div>
-            </div>
-            
-            <div class="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 md:p-12">
-                <p class="uppercase tracking-widest text-[#FEBE10] text-center mb-6 text-sm font-medium">Faltan pocos días...</p>
-                <div id="countdown" class="grid grid-cols-4 gap-4 text-center">
-                    <div class="countdown-digit p-6 rounded-2xl">
-                        <div id="days" class="text-6xl font-bold text-[#FEBE10]">18</div>
-                        <div class="text-xs tracking-widest mt-1">DÍAS</div>
-                    </div>
-                    <div class="countdown-digit p-6 rounded-2xl">
-                        <div id="hours" class="text-6xl font-bold text-[#FEBE10]">14</div>
-                        <div class="text-xs tracking-widest mt-1">HORAS</div>
-                    </div>
-                    <div class="countdown-digit p-6 rounded-2xl">
-                        <div id="minutes" class="text-6xl font-bold text-[#FEBE10]">37</div>
-                        <div class="text-xs tracking-widest mt-1">MIN</div>
-                    </div>
-                    <div class="countdown-digit p-6 rounded-2xl">
-                        <div id="seconds" class="text-6xl font-bold text-[#FEBE10]">22</div>
-                        <div class="text-xs tracking-widest mt-1">SEG</div>
-                    </div>
-                </div>
-                <button onclick="lanzarConfeti()" 
-                        class="w-full mt-8 bg-white text-[#20419A] py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-transform flex items-center justify-center gap-3">
-                    <i class="fas fa-party-horn"></i>
-                    ¡CONFIRMA TU ASISTENCIA Y EXPLOTA CONFETI!
-                </button>
-            </div>
-        </div>
-        
-        <div onclick="lanzarConfeti()" class="absolute bottom-10 right-10 bg-[#FEBE10] text-[#20419A] w-20 h-20 rounded-3xl flex items-center justify-center text-4xl cursor-pointer hover:rotate-12 transition-transform shadow-2xl">
-            🎉
-        </div>
-        
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent"></div>
-    </section>
-
-    <!-- ¿QUÉ ES EL BAZAR? -->
-    <section id="que-es" class="py-24 bg-white text-zinc-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-5">
-                    <span class="px-6 py-2 bg-[#00723F] text-white rounded-3xl text-sm font-medium inline-block mb-6">EDICIÓN PRIMAVERA 2026</span>
-                    <h2 class="text-5xl font-bold leading-tight">Un bazar hecho por estudiantes, para toda la comunidad</h2>
-                    <p class="mt-8 text-xl text-zinc-600">
-                        El Bazar UABC Valle Dorado es el evento más esperado del semestre. 
-                        Estudiantes, profesores y emprendedores locales se unen para ofrecerte 
-                        lo mejor a precios increíbles.
-                    </p>
-                    <div class="mt-12 flex items-center gap-8">
-                        <div class="text-center">
-                            <div class="text-5xl font-bold text-[#00723F]">100%</div>
-                            <div class="text-sm mt-1">Beneficio estudiantil</div>
-                        </div>
-                        <div class="h-12 w-px bg-zinc-300"></div>
-                        <div>
-                            <i class="fas fa-users text-6xl text-[#20419A]"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:col-span-7">
-                    <div class="bg-zinc-100 rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="https://picsum.photos/id/1015/1200/800" 
-                             alt="Bazar UABC" class="w-full h-auto">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ¿QUÉ ENCONTRARÁS? -->
-    <section id="que-hay" class="py-24 bg-[#20419A]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold gold-text">¿QUÉ ENCONTRARÁS EN EL BAZAR?</h2>
-                <p class="mt-4 text-xl text-[#FEBE10]">¡Haz clic en cada puesto para ver detalles!</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div onclick="mostrarModal(1)" class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 cursor-pointer group">
-                    <div class="text-6xl mb-6">👕</div>
-                    <h3 class="text-2xl font-bold">Ropa & Accesorios</h3>
-                    <p class="text-zinc-400 mt-2">Merch oficial UABC, ropa vintage, joyería artesanal y mucho más con descuentos de hasta 70%.</p>
-                    <div class="mt-8 text-[#FEBE10] group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
-                        Ver más <i class="fas fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div onclick="mostrarModal(2)" class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 cursor-pointer group">
-                    <div class="text-6xl mb-6">🎨</div>
-                    <h3 class="text-2xl font-bold">Artesanías & Arte</h3>
-                    <p class="text-zinc-400 mt-2">Obras originales de estudiantes de Artes Visuales, cerámica, stickers, prints y cuadros únicos.</p>
-                    <div class="mt-8 text-[#FEBE10] group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
-                        Ver más <i class="fas fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div onclick="mostrarModal(3)" class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 cursor-pointer group">
-                    <div class="text-6xl mb-6">📚</div>
-                    <h3 class="text-2xl font-bold">Libros & Tecnología</h3>
-                    <p class="text-zinc-400 mt-2">Libros de texto usados, novelas, audífonos, power banks y gadgets a precios de ganga.</p>
-                    <div class="mt-8 text-[#FEBE10] group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
-                        Ver más <i class="fas fa-arrow-right"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CUÁNDO -->
-    <section id="cuando" class="py-24 bg-gradient-to-b from-zinc-950 to-[#112D6E]">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold mb-4">20, 21 y 22 de Marzo 2026</h2>
-            <p class="text-3xl text-[#FEBE10]">10:00 am - 6:00 pm</p>
-            
-            <div class="mt-16 inline-flex flex-wrap justify-center gap-6">
-                <div class="bg-white/10 px-10 py-6 rounded-3xl text-center">
-                    <i class="fas fa-sun text-4xl mb-3 text-[#FEBE10]"></i>
-                    <div class="font-medium">Viernes 20</div>
-                    <div class="text-5xl font-bold text-white">10am - 6pm</div>
-                </div>
-                <div class="bg-white/10 px-10 py-6 rounded-3xl text-center">
-                    <i class="fas fa-sun text-4xl mb-3 text-[#FEBE10]"></i>
-                    <div class="font-medium">Sábado 21</div>
-                    <div class="text-5xl font-bold text-white">10am - 6pm</div>
-                </div>
-                <div class="bg-white/10 px-10 py-6 rounded-3xl text-center">
-                    <i class="fas fa-sun text-4xl mb-3 text-[#FEBE10]"></i>
-                    <div class="font-medium">Domingo 22</div>
-                    <div class="text-5xl font-bold text-white">10am - 4pm</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DÓNDE -->
-    <section id="donde" class="py-24 bg-white text-zinc-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-5xl font-bold mb-6">Campus Valle Dorado</h2>
-                    <div class="space-y-6 text-lg">
-                        <div class="flex gap-6">
-                            <i class="fas fa-map-marker-alt text-4xl text-[#00723F] mt-1"></i>
-                            <div>
-                                <p class="font-semibold">Dirección</p>
-                                <p>México 1 S/N, Fraccionamiento Valle Dorado<br>
-                                Ensenada, Baja California, C.P. 22890</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <i class="fas fa-bus text-4xl text-[#00723F] mt-1"></i>
-                            <div>
-                                <p class="font-semibold">Cómo llegar</p>
-                                <p>Autobús Ruta 1 o 3 • Estacionamiento gratuito disponible</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://maps.google.com/?q=UABC+Campus+Valle+Dorado+Ensenada" target="_blank"
-                       class="mt-12 inline-flex items-center gap-4 bg-[#20419A] text-white px-8 py-5 rounded-3xl hover:bg-[#112D6E]">
-                        <i class="fas fa-location-dot"></i>
-                        ABRIR EN GOOGLE MAPS
-                    </a>
-                </div>
-                
-                <div class="rounded-3xl overflow-hidden shadow-2xl border border-zinc-200">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.8!2d-116.614!3d31.866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d4a5b5b5b5b5b5%3A0x1234567890abcdef!2sUniversidad+Aut%C3%B3noma+de+Baja+California+-+Campus+Valle+Dorado!5e0!3m2!1ses!2smx!4v1700000000000"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REGÍSTRATE (AHORA CON FORMSUBMIT REAL) -->
-    <section id="registra" class="py-24 bg-[#00723F]">
-        <div class="max-w-2xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold text-white mb-4">¡Regístrate y no te pierdas nada!</h2>
-            <p class="text-xl text-[#FEBE10] mb-12">Recibe por correo: recordatorios, mapa de puestos y cupón especial</p>
-            
-            <form action="https://formsubmit.co/cimarronbazaruabc@gmail.com" 
-                  method="POST" 
-                  class="space-y-6">
-                
-                <input type="text" name="nombre" placeholder="Tu nombre completo" required
-                       class="w-full bg-white/20 border border-white/30 focus:border-[#FEBE10] rounded-2xl px-8 py-7 text-white placeholder:text-white/70 text-lg">
-                
-                <input type="email" name="email" placeholder="tu@email.com" required
-                       class="w-full bg-white/20 border border-white/30 focus:border-[#FEBE10] rounded-2xl px-8 py-7 text-white placeholder:text-white/70 text-lg">
-                
-                <div class="grid grid-cols-2 gap-6">
-                    <input type="tel" name="telefono" placeholder="Teléfono (opcional)"
-                           class="w-full bg-white/20 border border-white/30 focus:border-[#FEBE10] rounded-2xl px-8 py-7 text-white placeholder:text-white/70 text-lg">
-                    
-                    <select name="campus" class="w-full bg-white/20 border border-white/30 focus:border-[#FEBE10] rounded-2xl px-8 py-7 text-white text-lg">
-                        <option value="">Vengo de...</option>
-                        <option value="Valle Dorado">Campus Valle Dorado</option>
-                        <option value="Mexicali">Campus Mexicali</option>
-                        <option value="Tijuana">Campus Tijuana</option>
-                        <option value="Otro">Otro lugar</option>
-                    </select>
-                </div>
-
-                <!-- CAMPOS OCULTOS DE FORMSUBMIT (TODO LO QUE HACE FALTA) -->
-                <input type="hidden" name="_subject" value="¡Nueva confirmación al Bazar UABC Valle Dorado! - {nombre}">
-                <input type="hidden" name="_replyto" value="{email}">
-                <input type="hidden" name="_next" value="https://TU-SITIO-WEB.com/#gracias"> <!-- ← CAMBIA ESTA URL COMPLETA -->
-                <input type="hidden" name="_autoresponse" value="¡Gracias por confirmar tu asistencia al Gran Bazar UABC Valle Dorado! 🎉
-
-Te esperamos los días 20, 21 y 22 de marzo de 2026 en el Campus Valle Dorado (Ensenada, BC).
-
-Pronto te enviaremos el mapa de puestos, cupón de comida y más sorpresas.
-
-¡Nos vemos en el bazar!
-
-Equipo Organizador UABC Valle Dorado">
-                <input type="hidden" name="_honey" style="display:none;">
-                <!-- Si quieres quitar el reCAPTCHA invisible: descomenta la línea de abajo -->
-                <!-- <input type="hidden" name="_captcha" value="false"> -->
-
-                <button type="submit"
-                        class="w-full bg-white text-[#00723F] hover:bg-[#FEBE10] hover:text-[#20419A] font-bold text-2xl py-8 rounded-3xl transition-all">
-                    ¡CONFIRMAR ASISTENCIA GRATIS!
-                </button>
-            </form>
-            
-            <p class="text-white/70 text-sm mt-8">* Tus datos solo se usan para enviarte información del bazar</p>
-        </div>
-    </section>
-
-    <!-- MENSAJE DE ÉXITO (se muestra automáticamente después de registrar) -->
-    <section id="success-section" class="hidden py-24 bg-[#00723F]">
-        <div class="max-w-2xl mx-auto px-6 text-center text-white">
-            <div onclick="lanzarConfeti()" class="text-9xl mb-8 cursor-pointer">🎉</div>
-            <h2 class="text-6xl font-bold mb-6">¡Registro confirmado!</h2>
-            <p class="text-3xl mb-8">Revisa tu correo, te enviamos toda la info y tu cupón especial.</p>
-            <p class="text-2xl">¡Nos vemos del 20 al 22 de marzo en el Campus Valle Dorado!</p>
-            
-            <button onclick="lanzarConfeti()" 
-                    class="mt-12 bg-white text-[#00723F] px-14 py-7 rounded-3xl font-bold text-2xl hover:scale-105 transition-transform">
-                ¡Más confeti!
-            </button>
-            
-            <a href="#" onclick="document.getElementById('success-section').classList.add('hidden'); window.location.hash='';"
-               class="block mt-10 text-white/80 hover:text-white underline">Volver al inicio</a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-black py-12 border-t border-[#FEBE10]/20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center mb-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/UABC_Logo.PNG" alt="UABC" class="h-16 opacity-80">
-            </div>
-            <p class="text-zinc-500">Universidad Autónoma de Baja California • Campus Valle Dorado</p>
-            <p class="text-sm text-zinc-600 mt-2">Hecho con ❤️ para la comunidad UABC</p>
-            
-            <div class="flex justify-center gap-8 mt-12 text-3xl">
-                <a href="#" class="hover:text-[#FEBE10] transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-[#FEBE10] transition-colors"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="hover:text-[#FEBE10] transition-colors"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- MODAL -->
-    <div id="modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[999]">
-        <div class="bg-zinc-900 max-w-lg w-full mx-4 rounded-3xl overflow-hidden">
-            <div class="p-8" id="modal-content"></div>
-            <div class="border-t border-zinc-700 p-4">
-                <button onclick="cerrarModal()" 
-                        class="w-full py-4 text-xl font-medium text-[#FEBE10] hover:bg-white/10 rounded-2xl transition-colors">
-                    Cerrar
-                </button>
-            </div>
-        </div>
+      </div>
+      <button onclick="document.getElementById('registro').scrollIntoView({behavior: 'smooth'})"
+              class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-xl font-bold text-lg transition hover:scale-105">
+        INSCRÍBETE YA
+      </button>
     </div>
+  </nav>
 
-    <script>
-        function lanzarConfeti() {
-            confetti({
-                particleCount: 250,
-                spread: 80,
-                origin: { y: 0.6 }
-            });
-            setTimeout(() => {
-                confetti({
-                    particleCount: 150,
-                    angle: 60,
-                    spread: 70,
-                    origin: { x: 0 }
-                });
-            }, 300);
-        }
+  <!-- Hero -->
+  <header class="hero-bg flex items-center relative">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <h2 class="text-6xl md:text-8xl font-black mb-4 tracking-[-4px]">TORNEO UFC 5</h2>
+      <p class="text-4xl font-bold ufc-red mb-8">¡El Octágono llega a la UABC!</p>
+      
+      <div class="flex flex-wrap justify-center gap-8 text-xl mb-12">
+        <div class="flex items-center gap-3"><i class="fas fa-calendar"></i> <span>15 Mayo 2026</span></div>
+        <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt"></i> <span>Campus Valle Dorado</span></div>
+        <div class="flex items-center gap-3"><i class="fas fa-users"></i> <span>64 Luchadores</span></div>
+      </div>
+
+      <button onclick="document.getElementById('registro').scrollIntoView({behavior: 'smooth'})" 
+              class="bg-gradient-to-r from-red-600 to-red-700 text-3xl px-16 py-7 rounded-2xl font-black tracking-widest hover:scale-110 transition">
+        REGISTRARSE EN EL OCTÁGONO
+      </button>
+    </div>
+  </header>
+
+  <!-- Contador -->
+  <div class="bg-zinc-900 py-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-red-400 font-bold text-lg mb-4">FALTAN POCOS DÍAS PARA EL TORNEO</p>
+      <div id="countdown" class="grid grid-cols-4 gap-4 text-4xl font-black"></div>
+    </div>
+  </div>
+
+  <!-- Gameplay UFC 5 (video) -->
+  <section class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-5xl font-black mb-3 ufc-red">GAMEPLAY UFC 5</h2>
+        <p class="text-xl text-gray-300">Mira la intensidad del juego</p>
+      </div>
+      
+      <div class="video-box">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/C37H1CghuwU" 
+                  title="UFC 5 Gameplay" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-400 mt-6">
+        Video oficial de gameplay • EA Sports UFC 5
+      </p>
+    </div>
+  </section>
+
+  <!-- Imágenes del Torneo -->
+  <section class="py-20 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-12 ufc-red">IMÁGENES DEL TORNEO</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        function actualizarCountdown() {
-            const eventDate = new Date('2026-03-20T10:00:00').getTime();
-            const ahora = new Date().getTime();
-            const diferencia = eventDate - ahora;
-            
-            if (diferencia < 0) {
-                document.getElementById('countdown').innerHTML = `<div class="col-span-4 text-4xl font-bold text-[#FEBE10]">¡EL BAZAR YA EMPEZÓ! 🎉</div>`;
-                return;
-            }
-            
-            const days = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diferencia % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        const modalData = {
-            1: { emoji: "👕", titulo: "Ropa & Accesorios", descripcion: "Merch oficial UABC, ropa vintage, joyería artesanal y mucho más con descuentos de hasta 70%.", precio: "Hasta 70% OFF" },
-            2: { emoji: "🎨", titulo: "Artesanías & Arte", descripcion: "Obras originales de estudiantes de Artes Visuales, cerámica, stickers, prints y cuadros únicos.", precio: "Desde $50" },
-            3: { emoji: "📚", titulo: "Libros & Tecnología", descripcion: "Libros de texto usados, novelas, audífonos, power banks y gadgets a precios de ganga.", precio: "Desde $20" }
-        };
-        
-        function mostrarModal(id) {
-            const data = modalData[id];
-            const content = document.getElementById('modal-content');
-            content.innerHTML = `
-                <div class="text-8xl text-center mb-6">${data.emoji}</div>
-                <h3 class="text-4xl font-bold text-center mb-4">${data.titulo}</h3>
-                <p class="text-zinc-400 text-center text-lg leading-relaxed">${data.descripcion}</p>
-                <div class="mt-8 bg-zinc-800 rounded-2xl p-6 text-center">
-                    <div class="text-[#FEBE10] text-sm tracking-widest">PRECIOS ESPECIALES</div>
-                    <div class="text-4xl font-bold mt-2">${data.precio}</div>
-                </div>
-            `;
-            document.getElementById('modal').classList.remove('hidden');
-            document.getElementById('modal').classList.add('flex');
-        }
-        
-        function cerrarModal() {
-            const modal = document.getElementById('modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-        
-        // Mostrar mensaje de éxito si viene de Formsubmit
-        window.onload = function() {
-            setInterval(actualizarCountdown, 1000);
-            actualizarCountdown();
-            
-            setTimeout(() => {
-                lanzarConfeti();
-            }, 1800);
-            
-            // Si la URL termina en #gracias → mostrar éxito
-            if (window.location.hash === '#gracias') {
-                document.getElementById('success-section').classList.remove('hidden');
-                document.getElementById('success-section').scrollIntoView({ behavior: 'smooth' });
-                lanzarConfeti();
-            }
-            
-            document.querySelector('.hero-bg').addEventListener('click', (e) => {
-                if (e.target.tagName === 'SECTION') lanzarConfeti();
-            });
-        };
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") cerrarModal();
-        });
-    </script>
+        <!-- Octágono -->
+        <div class="card overflow-hidden rounded-3xl">
+          <img src="https://www.semana.com/resizer/tyUCVSTNP3vggpqtXkN_bDPVHuE=/fit-in/1280x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/F4734K3DXVFUXEUJY3343S4QPM.jpg" 
+               alt="Octágono UFC" class="w-full h-80 object-cover">
+          <div class="bg-zinc-900 p-4 text-center">
+            <p class="font-bold text-red-400">EL OCTÁGONO</p>
+            <p class="text-sm text-gray-400">Donde se decidirá el campeón</p>
+          </div>
+        </div>
+
+        <!-- Campeón -->
+        <div class="card overflow-hidden rounded-3xl">
+          <img src="https://i.ytimg.com/vi/IcGiPRNH1Hs/maxresdefault.jpg" 
+               alt="Campeón UFC" class="w-full h-80 object-cover">
+          <div class="bg-zinc-900 p-4 text-center">
+            <p class="font-bold text-red-400">¡EL CAMPEÓN DEL TORNEO!</p>
+          </div>
+        </div>
+
+        <!-- Gameplay -->
+        <div class="card overflow-hidden rounded-3xl">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.xKFfk8aU5lQNiVb87nABugHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" 
+               alt="Gameplay UFC 5" class="w-full h-80 object-cover">
+          <div class="bg-zinc-900 p-4 text-center">
+            <p class="font-bold text-red-400">GAMEPLAY</p>
+            <p class="text-sm text-gray-400">EA Sports UFC 5</p>
+          </div>
+        </div>
+
+        <!-- Otra imagen de gameplay -->
+        <div class="card overflow-hidden rounded-3xl">
+          <img src="https://sm.ign.com/t/ign_me/gallery/e/ea-sports-/ea-sports-ufc-5-gameplay-screenshots_j4k4.1400.jpg" 
+               alt="Gameplay UFC 5" class="w-full h-80 object-cover">
+          <div class="bg-zinc-900 p-4 text-center">
+            <p class="font-bold text-red-400">GAMEPLAY</p>
+            <p class="text-sm text-gray-400">Acción en el octágono</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <section id="registro" class="py-20 bg-zinc-950">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl font-black mb-3">INSCRÍBETE AL TORNEO</h2>
+        <p class="text-xl text-red-400">Demuestra tu dominio en EA Sports UFC 5</p>
+      </div>
+
+      <form id="formRegistro" class="card bg-zinc-900 p-10 rounded-3xl border border-red-900/30">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">Nombre Completo</label>
+            <input type="text" id="nombre" required class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:border-red-600 outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Matrícula UABC</label>
+            <input type="text" id="matricula" required class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:border-red-600 outline-none">
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Correo Electrónico</label>
+          <input type="email" id="email" required class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:border-red-600 outline-none">
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">Teléfono</label>
+            <input type="tel" id="telefono" required class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:border-red-600 outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Plataforma</label>
+            <select id="plataforma" required class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:border-red-600 outline-none">
+              <option value="">Selecciona...</option>
+              <option value="PlayStation 5">PlayStation 5</option>
+              <option value="Xbox Series X/S">Xbox Series X/S</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Gamer Tag</label>
+          <input type="text" id="nickname" required placeholder="Ej: UABC_KO_23" 
+                 class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:border-red-600 outline-none">
+        </div>
+
+        <div class="mt-8 flex items-center gap-3">
+          <input type="checkbox" id="acepto" required class="w-6 h-6 accent-red-600">
+          <label for="acepto" class="text-sm">Acepto las bases y reglamento del torneo</label>
+        </div>
+
+        <button type="submit" class="mt-12 w-full bg-red-600 hover:bg-red-700 py-7 rounded-2xl text-2xl font-black transition hover:scale-105">
+          ENVIAR INSCRIPCIÓN
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-black py-12 text-center text-gray-400">
+    <p>Organizado por la comunidad de eSports • UABC Campus Valle Dorado © 2026</p>
+  </footer>
+
+  <script>
+    function countdown() {
+      const eventDate = new Date("2026-05-15T09:00:00").getTime();
+      const timer = document.getElementById('countdown');
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timer.innerHTML = `
+          <div class="bg-zinc-800 rounded-2xl p-6"><span class="block text-6xl text-red-500">${days}</span><span class="text-sm">DÍAS</span></div>
+          <div class="bg-zinc-800 rounded-2xl p-6"><span class="block text-6xl text-red-500">${hours}</span><span class="text-sm">HORAS</span></div>
+          <div class="bg-zinc-800 rounded-2xl p-6"><span class="block text-6xl text-red-500">${minutes}</span><span class="text-sm">MIN</span></div>
+          <div class="bg-zinc-800 rounded-2xl p-6"><span class="block text-6xl text-red-500">${seconds}</span><span class="text-sm">SEG</span></div>
+        `;
+      }, 1000);
+    }
+    countdown();
+
+    document.getElementById('formRegistro').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      alert(`¡Inscripción recibida, ${nombre}!\n\n¡Bienvenido al Octágono! 🔥`);
+      this.reset();
+    });
+  </script>
 </body>
 </html>
